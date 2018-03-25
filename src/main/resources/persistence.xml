@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence xmlns="http://xmlns.jcp.org/xml/ns/persistence"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence
+	http:/xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd"
+	version="2.1">
+	
+	<persistence-unit name="myUnit" transaction-type="RESOURCE_LOCAL">
+		<provider>org.hibernate.ejb.HibernatePersistence</provider>
+		<class>ua.edu.constantine.relations.data.Lecture</class>
+		<class>ua.edu.constantine.relations.data.Presentation</class>
+		<class>ua.edu.constantine.relations.data.Professor</class>
+		
+		<properties>
+			<!--<property
+				name="javax.persistence.schema-generation.database.action"
+				value="drop-and-create"/>-->
+			<property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver"/>
+			<property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/relations"/>
+			<property name="javax.persistence.jdbc.user" value="relations"/>
+			<property name="javax.persistence.jdbc.password" value="relations"/>
+			<!--<property name="eclipselink.logging.level" value="INFO"/>-->
+		</properties>
+	</persistence-unit>
+</persistence>
+
+<!--  <persistance
+	xmlns="http://java.sun.com/xml/ns/persistence"
+	version="1.0">
+	<persistence-unit
+		name="myUnit"
+		transaction-type="RESOURCE_LOCAL">
+		
+	</persistence-unit>
+	
+</persistance>-->
